@@ -28,9 +28,28 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo '<p> Samuel putero </p>'; ?>
-    <?php echo '<p>Dame mis patatah</p>'; ?>
+    <?php 
     
-    <?php echo '<p>Alesito cani</p>'; ?>
-</body>
+    $array = array('305890','123630');
+    do{
+    $mostrar = crearRandom();
+    }while(in_array($mostrar, $array));
+    echo"".$mostrar."";
+    
+
+    function crearRandom(){
+        $guardar = "";
+        for ($i = 0; $i < 6; $i++) {
+            $numero = rand(0, 9);
+            $guardar .= $numero;
+        }
+        return $guardar;
+    }
+  
+        
+    
+    
+
+    ?>
+    </body>
 </html>
