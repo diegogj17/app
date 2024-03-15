@@ -7,12 +7,12 @@
 </head>
 <body>
     <?php 
+    
+    $array = array('305890','123630');
     do{
-        $array = array('305890','123630');
     $mostrar = crearRandom();
-    comprobarNumero($array, $mostrar);
-    echo"".$mostrar."";
     }while(in_array($mostrar, $array));
+    echo"".$mostrar."";
     
 
     function crearRandom(){
@@ -23,13 +23,7 @@
         }
         return $guardar;
     }
-    function comprobarNumero($array, $numero){
-            if(!in_array( $numero,$array)){
-                echo"Es correcto";
-            }else{
-                echo "Este numero ya existe, te genero uno nuevo";
-            }
-    }
+  
         
     
     
