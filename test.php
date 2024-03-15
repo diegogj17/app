@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo '<p> Samuel putero </p>'; ?>
-    <?php echo '<p>Dame mis patatah</p>'; ?>
-    
-    <?php echo '<p>Alesito cani</p>'; ?>
+    <?php 
+       
+        for ($i = 0; $i < 6; $i++) {
+            $numero = rand(1, 100);
+            echo $numero; }
+    ?>
 </body>
 </html>
