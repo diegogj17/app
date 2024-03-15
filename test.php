@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-       
+    <?php    
         for ($i = 0; $i < 6; $i++) {
             $numero = rand(1, 100);
             echo $numero; }
