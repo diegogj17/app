@@ -10,7 +10,7 @@
 
 
     if ($conn) {
-        echo "Estas conectado";
+        echo "Estas conectado" . "<br>";
 
     }else{
         echo "No estas conectado";
