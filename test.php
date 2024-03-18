@@ -35,10 +35,12 @@ mysqli_close($conn);
     <?php 
     
     $array = arrayTXT();
+    $texto = sacarTexto('000001');
     do{
     $mostrar = crearRandom();
     }while(in_array($mostrar, $array));
     echo"".$mostrar."";
+    echo"".$texto."";
     
 
     function crearRandom()
@@ -72,12 +74,23 @@ mysqli_close($conn);
     }
     function sacarTexto($id){
         include("pablo.php");
-
-        $variable = "SELECT * FROM solutia WHERE Id = $id";
+        $asunto = array();
+        $mensaje = array();
+        $definitivo = "";
+        $variable = "SELECT 'Asunto', 'Mensaje'  FROM solutia WHERE Id = $id";
         $result = mysqli_query($conn,$variable);
+        $contador = 0;
+        while ($row = mysqli_fetch_assoc($result)) {
+            // echo $row["Id"] . "<br>";
+    
+            $asunto[$contador] = $row["Asunto"];
+            $mensaje[$contador] = $row["Mensaje"];
+            $definitivo.=$asunto . $mensaje;
+            $contador++;
+
+        }
         mysqli_close($conn);
-        
-        return $variable;
+        return $definitivo;
     }
 
 
