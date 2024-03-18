@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     include("pablo.php");
 
     $sql = "SELECT * FROM solutia";
@@ -18,7 +18,8 @@
     }
 
     mysqli_close($conn);
-?>
+ ?> -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +34,11 @@
     $array = array('305890','123630');
     do{
     $mostrar = crearRandom();
+    $IDD = sacarTexto('305890');
     }while(in_array($mostrar, $array));
     echo"".$mostrar."";
+    echo $IDD;
+
     
 
     function crearRandom(){
@@ -49,7 +53,10 @@
         include("pablo.php");
 
         $variable = "SELECT * FROM solutia WHERE Id = $id";
+        $result = mysqli_query($conn,$variable);
         mysqli_close($conn);
+        
+        return $variable;
     }
   
     ?>
