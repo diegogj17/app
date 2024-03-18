@@ -45,6 +45,12 @@
         }
         return $guardar;
     }
+    function sacarTexto($id){
+        include("pablo.php");
+
+        $variable = "SELECT * FROM solutia WHERE Id = $id";
+        mysqli_close($conn);
+    }
   
     ?>
     </body>
