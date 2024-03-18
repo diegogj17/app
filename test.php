@@ -24,10 +24,6 @@
         return $guardar;
     }
   
-        
-    
-    
-
     ?>
 </body>
 </html>
