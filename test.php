@@ -74,19 +74,13 @@ mysqli_close($conn);
     }
     function sacarTexto($id){
         include("pablo.php");
-        $asunto = array();
-        $mensaje = array();
         $definitivo = "";
         $variable = "SELECT 'Asunto', 'Mensaje'  FROM solutia WHERE Id = $id";
         $result = mysqli_query($conn,$variable);
-        $contador = 0;
         while ($row = mysqli_fetch_assoc($result)) {
             // echo $row["Id"] . "<br>";
-    
-            $asunto[$contador] = $row["Asunto"];
-            $mensaje[$contador] = $row["Mensaje"];
-            $definitivo.=$asunto . $mensaje;
-            $contador++;
+           
+            $definitivo.=$row["Asunto"] . $row["Mensaje"];
 
         }
         mysqli_close($conn);
