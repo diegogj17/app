@@ -35,7 +35,7 @@ mysqli_close($conn);
     <?php 
     
     $array = arrayTXT();
-    $texto = sacarTexto('000001');
+    $texto = sacarTexto('000002');
     do{
     $mostrar = crearRandom();
     }while(in_array($mostrar, $array));
@@ -55,7 +55,6 @@ mysqli_close($conn);
 
     function arrayTXT()
     {
-        echo "Has entrado en la funcion de arrayTXT" . "<br>";
         include ("pablo.php");
         $ideses = array();
         $tabla = "SELECT `Id` FROM solutia";
@@ -75,21 +74,16 @@ mysqli_close($conn);
     function sacarTexto($id){
         include("pablo.php");
         $definitivo = "";
-        $variable = "SELECT 'Asunto', 'Mensaje'  FROM solutia WHERE Id = $id";
+        $variable = "SELECT `Asunto`, `Mensaje`  FROM solutia WHERE Id = $id";
         $result = mysqli_query($conn,$variable);
         while ($row = mysqli_fetch_assoc($result)) {
-            // echo $row["Id"] . "<br>";
-           
+            echo $row["Asunto"] . "<br>";
+            echo $row["Mensaje"] . "<br>";  
             $definitivo.=$row["Asunto"] . $row["Mensaje"];
-
         }
         mysqli_close($conn);
         return $definitivo;
     }
-
-
-
-
     ?>
 </body>
 
