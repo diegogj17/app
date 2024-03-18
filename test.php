@@ -34,7 +34,7 @@ mysqli_close($conn);
 <body>
     <?php 
     
-    $array = array('305890','123630');
+    $array = arrayTXT();
     do{
     $mostrar = crearRandom();
     }while(in_array($mostrar, $array));
@@ -68,6 +68,7 @@ mysqli_close($conn);
         }
         ;
         mysqli_close($conn);
+        return $ideses;
     }
     function sacarTexto($id){
         include("pablo.php");
