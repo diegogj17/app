@@ -13,19 +13,7 @@
     <button type="button" id="responderqueja">Responder Queja</button>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Verificar si los campos están vacíos
-        echo empty ($_POST["asunto"]);
-        if (empty ($_POST["asunto"]) || empty ($_POST["queja"])) {
-            echo "<p style='color: red;'>Por favor, complete todos los campos.</p>";
-        } else {
-            // Procesar el formulario
-            // Aquí puedes poner el código para procesar los datos del formulario
-            echo "<p>Asunto: " . $_POST["asunto"] . "</p>";
-            echo "<p>Queja: " . $_POST["queja"] . "</p>";
-            
-        }
-    }
+
 
     ?>
     <div id="invisible">
@@ -43,17 +31,8 @@
 
     <div id="invisible2">
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Verificar si los campos están vacíos
-            if (empty ($_POST["asunto"]) || empty ($_POST["queja"])) {
-                echo "<p style='color: red;'>Por favor, complete todos los campos.</p>";
-            } else {
-                // Procesar el formulario
-                // Aquí puedes poner el código para procesar los datos del formulario
-                echo "<p>Asunto: " . $_POST["asunto"] . "</p>";
-                echo "<p>Queja: " . $_POST["queja"] . "</p>";
-            }
-        }
+       
+        
         ?>
         <form action="bongocat.htm" method="post">
             <legend>RESPONDER QUEJAS</legend>

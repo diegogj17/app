@@ -4,12 +4,12 @@
 function insertar($Asunto, $Mensaje){
     include("pablo.php");
     
-    $Id = crearRandom();
+    $id = crearRandom();
     $Asunto = mysqli_real_escape_string($conn, $Asunto);
     $Mensaje = mysqli_real_escape_string($conn, $Mensaje);
     
     $sql = "INSERT INTO solutia (Id,  Fecha, Asunto, Mensaje)
-                        values ('$Id', NOW(), '$Asunto', '$Mensaje')";
+                        values ('$id', NOW(), '$Asunto', '$Mensaje')";
 
     mysqli_query($conn,$sql);
 
@@ -22,6 +22,7 @@ function insertar($Asunto, $Mensaje){
 
     
     mysqli_close($conn);
+    return $id;
 }
 ?>
 
