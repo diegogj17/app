@@ -3,72 +3,49 @@
 <?php
 function insertar($Asunto, $Mensaje){
     include("pablo.php");
-
-    $Id = crearRandom();
+    
+    $id = crearRandom();
     $Asunto = mysqli_real_escape_string($conn, $Asunto);
     $Mensaje = mysqli_real_escape_string($conn, $Mensaje);
     
     $sql = "INSERT INTO solutia (Id,  Fecha, Asunto, Mensaje)
-                        values ('$Id', NOW(), '$Asunto', '$Mensaje')";
+                        values ('$id', NOW(), '$Asunto', '$Mensaje')";
 
     mysqli_query($conn,$sql);
 
-    $para = "pablitoesta@gmail.com";
-    $asuntoCorreo = "Nuevo mensaje: $Asunto";
-    $mensajeCorreo = $Mensaje;
+    //Poner email del abogado a la que se le envia la denuncia
+    $para = '';
 
     
-    mail($para, $asuntoCorreo, $mensajeCorreo);
+    mail($para,$Asunto, $Mensaje);
 
     
     mysqli_close($conn);
+    return $id;
 }
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <?php 
-    
-    $array = arrayTXT();
-    $texto = sacarTexto('000002');
-    do{
-    $mostrar = crearRandom();
-    }while(in_array($mostrar, $array));
-    echo"".$texto."";
-
-    insertar("Pablo denuncia", "Quiero denunciar al edu");
     function crearRandom()
     {
-        $guardar = "";
-        for ($i = 0; $i < 6; $i++) {
-            $numero = rand(0, 9);
-            $guardar .= $numero;
-        }
+        $arrayID = addIDtoArray();
+        do{
+            $guardar = "";
+            for ($i = 0; $i < 6; $i++) {
+                $numero = rand(0, 9);
+                $guardar .= $numero;
+            }
+            }while(in_array($guardar, $arrayID));
         return $guardar;
     }
 
-    function arrayTXT()
+    function addIDtoArray()
     {
         include ("pablo.php");
         $ideses = array();
         $tabla = "SELECT `Id` FROM solutia";
         $resultado = mysqli_query($conn, $tabla);
         $contador = 0;
-        while ($row = mysqli_fetch_assoc($resultado)) {
-            // echo $row["Id"] . "<br>";
-    
+        while ($row = mysqli_fetch_assoc($resultado)) {    
             $ideses[$contador] = $row["Id"];
             $contador++;
-
         }
         ;
         mysqli_close($conn);
@@ -79,20 +56,18 @@ function insertar($Asunto, $Mensaje){
         $definitivo = "";
         $variable = "SELECT `Asunto`, `Mensaje`  FROM solutia WHERE Id = $id";
         $result = mysqli_query($conn,$variable);
+        if(mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            echo $row["Asunto"] . "<br>";
-            echo $row["Mensaje"] . "<br>";  
             $definitivo.=$row["Asunto"] . $row["Mensaje"];
+        }}else{
+            echo"No existe ese id maquina";
         }
         mysqli_close($conn);
         return $definitivo;
     }
     ?>
-</body>
 
-</html>
-
-<?php
+<!-- <?php
     include("pablo.php");
 
     $sql = "SELECT * FROM solutia";
@@ -112,4 +87,4 @@ function insertar($Asunto, $Mensaje){
     }
 
     mysqli_close($conn);
-?>
+?> -->
