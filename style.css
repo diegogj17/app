@@ -19,7 +19,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-#recuerda{
+.recuerda{
     color: #0056b3;
     display: flex;
     justify-content: center;

@@ -21,7 +21,7 @@
             $queja = $_POST["queja"];
 
             $sesion =  $_SESSION['cod'] = insertar($asunto, $queja);
-            echo "<p id='recuerda'>Recuerda tu código </p>";
+            echo "<p class='recuerda'>Recuerda tu código </p>";
             echo "<p id='codigo'>$sesion</p>";
         } else {
             // Manejar el caso en que el formulario no fue enviado
