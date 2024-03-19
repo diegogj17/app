@@ -3,7 +3,7 @@
 <?php
 function insertar($Asunto, $Mensaje){
     include("pablo.php");
-
+    
     $Id = crearRandom();
     $Asunto = mysqli_real_escape_string($conn, $Asunto);
     $Mensaje = mysqli_real_escape_string($conn, $Mensaje);

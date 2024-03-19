@@ -7,22 +7,21 @@
 </head>
 <body>
     <p>O QUE NO FUNCIONA</p>
-<?php
-
-
-// Aquí puedes usar la variable $mostrar
-
-echo "<p>El valor de mostrar es: " . $mostrar . "</p>";
-
-// Además, aquí puedes procesar los datos del formulario enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Procesar los datos del formulario
-    $asunto = $_POST["asunto"];
-    $queja = $_POST["queja"];
-
-    // Realizar cualquier otro procesamiento necesario
-}
-?>
-
+    <?php
+            function crearRandom()
+            {
+                $guardar = "";
+                for ($i = 0; $i < 6; $i++) {
+                    $numero = rand(0, 9);
+                    $guardar .= $numero;
+                }
+                return $guardar;
+            }
+            $array = array('305890', '123630');
+            do {
+                $mostrar = crearRandom();
+            } while (in_array($mostrar, $array));
+           
+        ?>
 </body>
 </html>

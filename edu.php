@@ -24,53 +24,19 @@
             echo "<p>Asunto: " . $_POST["asunto"] . "</p>";
             echo "<p>Queja: " . $_POST["queja"] . "</p>";
             
-            function crearRandom()
-            {
-                $guardar = "";
-                for ($i = 0; $i < 6; $i++) {
-                    $numero = rand(0, 9);
-                    $guardar .= $numero;
-                }
-                return $guardar;
-            }
-            $array = array('305890', '123630');
-            do {
-                $mostrar = crearRandom();
-            } while (in_array($mostrar, $array));
-            echo $mostrar;
         }
     }
 
     ?>
     <div id="invisible">
-        <form  method="post">
+        <form action="codigo.php" method="post">
             <legend>QUEJAS</legend>
             <label for="asunto">Asunto:</label><br>
             <input type="text" id="asunto" name="asunto" required><br><br>
             <label for="queja">Quejas:</label><br>
             <textarea id="queja" name="queja" rows="6" cols="40" required></textarea><br><br>
-            <textarea id="codigo" name="codigo" rows="6" cols="6" required>
-            <?php
-            function crearRandom()
-            {
-                $guardar = "";
-                for ($i = 0; $i < 6; $i++) {
-                    $numero = rand(0, 9);
-                    $guardar .= $numero;
-                }
-                return $guardar;
-            }
-            $array = array('305890', '123630');
-            do {
-                $mostrar = crearRandom();
-            } while (in_array($mostrar, $array));
-            echo $mostrar;
-        ?>
-
-            </textarea><br><br>
             <input type="submit" value="Enviar" id="continuar">
         </form>
-
     </div>
 
 
