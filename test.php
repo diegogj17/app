@@ -85,7 +85,7 @@ function insertar($Asunto, $Mensaje){
 
 </html>
 
-<?php
+<!-- <?php
     include("pablo.php");
 
     $sql = "SELECT * FROM solutia";
@@ -105,4 +105,4 @@ function insertar($Asunto, $Mensaje){
     }
 
     mysqli_close($conn);
-?>
+?> -->
