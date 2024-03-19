@@ -13,13 +13,12 @@ function insertar($Asunto, $Mensaje){
 
     mysqli_query($conn,$sql);
 
-    $para = "pablitoesta@gmail.com";
-    $asuntoCorreo = "Nuevo mensaje: $Asunto";
-    $mensajeCorreo = $Mensaje;
 
+    //Poner email del abogado al que se le envia la denuncia
+    $para = '';
     
-    mail($para, $asuntoCorreo, $mensajeCorreo);
-
+    mail($para, $Asunto, $Mensaje);
+   
     
     mysqli_close($conn);
 }
