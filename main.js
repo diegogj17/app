@@ -28,7 +28,6 @@ function aparecerResponderQueja(){
         contadorAp2=0;
         botoncrearqueja.style.display="inline";
         divresponder.style.display = "none";
-        
     }
 }
 document.addEventListener("DOMContentLoaded", function() {
