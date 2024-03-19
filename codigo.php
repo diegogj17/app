@@ -12,7 +12,7 @@
     session_start(); 
     
     if (!isset ($_SESSION['codigo'])) {
-        include ("test.php");
+        include ("funciones.php");
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Recuperar la variable 'nombre' del formulario enviado

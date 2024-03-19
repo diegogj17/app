@@ -12,7 +12,6 @@
     <button type="button" id="crearqueja">Crear Queja</button>
     <button type="button" id="responderqueja">Responder Queja</button>
     <button type="button" id="consultarqueja">Consultar Queja</button>
-
     <?php
 
 
@@ -43,7 +42,7 @@
     <div id="invisible3">
         <?php
         ?>
-        <form action="respuesta.php" method="post">
+        <form action="consultarqueja.php" method="post">
             <legend>CONSULTAR QUEJA</legend>
             <label for="codigo_queja">Código_Queja:</label><br>
             <input type="text" id="consultarqueja" name="consultarqueja" required><br><br>

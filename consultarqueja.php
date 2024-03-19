@@ -11,23 +11,19 @@
     <?php
     session_start(); 
     
-    if (!isset ($_SESSION['codigo'])) {
-        include ("test.php");
+    
+        include ("funciones.php");
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Recuperar la variable 'nombre' del formulario enviado
-            $consultarqueja = $_POST["consultarqueja"];            
+            $id = $_POST["consultarqueja"];
+            $sesion =  $_SESSION['consulta'] = sacarTexto($id);  
+            echo "<p>$sesion</p>";
             // Hacer lo que necesites con la variable $nombre
-        } else {
-            // Manejar el caso en que el formulario no fue enviado
-            echo "El formulario no fue enviado.";
-        }
-       $sesion =  $_SESSION['codigo'] = insertar($asunto, $queja);
+        } 
        
-    }else {
-        echo "<p>he pasao por el else</p>";
-      
-    }
+       
+    
     ?>
 </body>
 
