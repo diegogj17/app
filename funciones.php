@@ -22,6 +22,16 @@ function insertar($Asunto, $Mensaje)
     mysqli_close($conn);
     return $id;
 }
+
+function actualizar($Id,$Respuesta){
+    include ("pablo.php");
+
+    $sql = "UPDATE solutia set Respuesta = $Respuesta where Id = $Id";
+    
+    mysqli_query($conn, $sql);
+
+    mysqli_close($conn);
+}
 function insertarConID($id, $Asunto, $Mensaje)
 {
     include ("pablo.php");
