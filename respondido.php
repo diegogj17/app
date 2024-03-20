@@ -17,10 +17,11 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Recuperar la variable 'nombre' del formulario enviado
-            $respond = $_POST["asunto"];
-        
+            $respond = $_POST["respuestas"];
+            $id = $_POST["codigoqueja"];
+            
 
-            $sesion =  $_SESSION['cod'] = insertar();
+             actualizar($id, $respond);
             echo "<p class='recuerda'>Recuerda tu código </p>";
             echo "<p id='codigo'>$sesion</p>";
         } else {
