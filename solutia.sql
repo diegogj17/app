@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2024 a las 12:21:36
+-- Tiempo de generación: 20-03-2024 a las 12:28:53
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `solutia`
 --
+CREATE DATABASE IF NOT EXISTS `solutia` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `solutia`;
 
 -- --------------------------------------------------------
 
@@ -27,12 +29,14 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `solutia`
 --
 
-CREATE TABLE `solutia` (
+DROP TABLE IF EXISTS `solutia`;
+CREATE TABLE IF NOT EXISTS `solutia` (
   `Id` varchar(6) NOT NULL,
   `Fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Asunto` tinytext NOT NULL,
   `Mensaje` varchar(750) NOT NULL,
-  `Respuesta` varchar(750) NOT NULL DEFAULT 'Todavía no hay respuesta'
+  `Respuesta` varchar(750) NOT NULL DEFAULT 'Todavía no hay respuesta',
+  PRIMARY KEY (`Id`,`Fecha`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -41,16 +45,6 @@ CREATE TABLE `solutia` (
 
 INSERT INTO `solutia` (`Id`, `Fecha`, `Asunto`, `Mensaje`, `Respuesta`) VALUES
 ('996494', '2024-03-19 12:49:47', 'edu', 'edu perro', 'Todavía no hay respuesta');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `solutia`
---
-ALTER TABLE `solutia`
-  ADD PRIMARY KEY (`Id`,`Fecha`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
