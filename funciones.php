@@ -75,11 +75,11 @@ function sacarTexto($id)
 {
     include ("pablo.php");
     $definitivo = "";
-    $variable = "SELECT `Asunto`, `Mensaje`  FROM solutia WHERE Id = $id";
+    $variable = "SELECT `Asunto`, `Mensaje`, `Respuesta`  FROM solutia WHERE Id = $id";
     $result = mysqli_query($conn, $variable);
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            $definitivo .= "Asunto: " . $row["Asunto"] . "<br>" . "Mensaje: " . $row["Mensaje"];
+            $definitivo .= "Asunto: " . $row["Asunto"] . "<br>" . "Mensaje: " . $row["Mensaje"] . "<br>" . $row["Respuesta"];
         }
     } else {
         echo "No existe ese id";
