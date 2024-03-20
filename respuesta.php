@@ -35,6 +35,7 @@
             <?php
             $id = $_POST["codigoqueja"];
             echo "$id";
+            $id = trim($id);
             ?>
         </textarea>
         <textarea name="respuestas" id="" cols="30" rows="10"></textarea>

@@ -16,6 +16,7 @@
     $id = $_POST["codigoqueja"];
         echo"<p>$respond</p>";
         echo "<p>$id</p>";
+       $id=trim($id);
     actualizar($id, $respond);
     ?>
     
