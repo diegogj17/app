@@ -31,7 +31,7 @@
         
     }else {
        $sesion =  $_SESSION['cod'];
-        echo "<p id='recuerda'>Recuerda tu código </p>";
+        echo "<p class='recuerda'>Recuerda tu código </p>";
         echo "<p id='codigo'>$sesion</p>";
     }
 
