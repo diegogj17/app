@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `solutia` (
 --
 
 INSERT INTO `solutia` (`Id`, `Fecha`, `Asunto`, `Mensaje`, `Respuesta`) VALUES
-('996494', '2024-03-19 12:49:47', 'edu', 'edu perro', 'Todavía no hay respuesta');
+('996494', '2024-03-19 12:49:47', 'Probando', 'Probando el primer mensaje', 'Todavía no hay respuesta');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
