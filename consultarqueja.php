@@ -17,7 +17,7 @@
             // Recuperar la variable 'nombre' del formulario enviado
             $id = $_POST["consultarqueja"];
             $sesion = $_SESSION['consulta'] = sacarTexto($id);
-            echo "<p class='recuerda'>$sesion</p>";
+            echo "<p id='recuerda'>$sesion</p>";
             // Hacer lo que necesites con la variable $nombre
         }
         ?>
