@@ -25,8 +25,8 @@ function insertar($Asunto, $Mensaje)
 
 function actualizar($Id,$Respuesta){
     include ("pablo.php");
-    
-    $sql = "UPDATE solutia set Respuesta = '$Respuesta' where Id = '$Id'";
+
+    $sql = "UPDATE solutia set `Respuesta` = $Respuesta where Id = $Id";
     
     $hola=mysqli_query($conn, $sql);
     echo "<p>$hola , $sql</p>";

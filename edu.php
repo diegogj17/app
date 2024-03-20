@@ -21,8 +21,6 @@
         <img src="solutia1.jpg" width="1550px" height="400px">
     </div>
     <?php
-
-
     ?>
     <div id="invisible">
         <form action="codigo.php" method="post">
