@@ -29,7 +29,7 @@
         }
     }
     ?>
-    <form action="respondido.php" method="post">
+    <form action="quejaResuelta.php" method="post">
         <legend>RESPONDER QUEJA</legend>
         <textarea name="codigoqueja" cols="6" rows="1">
             <?php

@@ -1,7 +1,7 @@
 <?php
 function insertar($Asunto, $Mensaje)
 {
-    include ("pablo.php");
+    include ("includeBDD.php");
 
     $id = crearRandom();
     $Asunto = mysqli_real_escape_string($conn, $Asunto);
@@ -24,7 +24,7 @@ function insertar($Asunto, $Mensaje)
 }
 
 function actualizar($Id,$Respuesta){
-    include ("pablo.php");
+    include ("includeBDD.php");
 
     $sql = "UPDATE solutia set `Respuesta` = '$Respuesta' where Id = $Id";
     
@@ -35,7 +35,7 @@ function actualizar($Id,$Respuesta){
 }
 function insertarConID($id, $Asunto, $Mensaje)
 {
-    include ("pablo.php");
+    include ("includeBDD.php");
     $Asunto = mysqli_real_escape_string($conn, $Asunto);
     $Mensaje = mysqli_real_escape_string($conn, $Mensaje);
 
@@ -69,7 +69,7 @@ function crearRandom()
 
 function addIDtoArray()
 {
-    include ("pablo.php");
+    include ("includeBDD.php");
     $ideses = array();
     $tabla = "SELECT `Id` FROM solutia";
     $resultado = mysqli_query($conn, $tabla);
@@ -84,7 +84,7 @@ function addIDtoArray()
 }
 function sacarTexto($id)
 {
-    include ("pablo.php");
+    include ("includeBDD.php");
     $definitivo = "";
     $variable = "SELECT `Asunto`, `Mensaje`, `Respuesta`  FROM solutia WHERE Id = $id";
     $result = mysqli_query($conn, $variable);

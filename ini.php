@@ -23,7 +23,7 @@
     <?php
     ?>
     <div id="invisible">
-        <form action="codigo.php" method="post">
+        <form action="showIdCode.php" method="post">
             <legend>QUEJAS</legend>
             <label for="asunto">Asunto:</label><br>
             <input type="text" id="asunto" name="asunto" required><br><br>
