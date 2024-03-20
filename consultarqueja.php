@@ -9,19 +9,20 @@
 </head>
 
 <body>
-    <?php
-    session_start(); 
+    <form action="ini.php" class="volver">
+        <?php
+        session_start();
         include ("funciones.php");
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Recuperar la variable 'nombre' del formulario enviado
             $id = $_POST["consultarqueja"];
-            $sesion =  $_SESSION['consulta'] = sacarTexto($id);  
+            $sesion = $_SESSION['consulta'] = sacarTexto($id);
             echo "<p class='recuerda'>$sesion</p>";
             // Hacer lo que necesites con la variable $nombre
-        } 
-    ?>
-     <form action="ini.php">
-    <input type="submit" id="volver" value="Volver"></input>
+        }
+        ?>
+
+        <input type="submit" id="volver" value="Volver"></input>
     </form>
 </body>
 
