@@ -18,7 +18,7 @@
     actualizar($id, $respond);
     echo  "<p class='recuerda'>Queja Resuelta exitosamente</p>"
     ?>
-    <form action="ini.php">
+    <form action="ini.php" class="volver">
     <input type="submit" id="volver" value="Volver"></input>
     </form>
 </body>
