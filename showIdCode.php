@@ -37,6 +37,9 @@
 
     
     ?>
+     <form action="ini.php">
+    <input type="submit" id="volver" value="Volver"></input>
+    </form>
 </body>
 
 </html>
