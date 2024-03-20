@@ -29,11 +29,17 @@
         }
     }
     ?>
-       <form action="respondido.php" method="post">
-            <legend>RESPONDER QUEJA</legend>
-            <textarea name="respuestas" id="" cols="30" rows="10"></textarea>
-            <input type="submit" value="Enviar">
-        </form>
+    <form action="respondido.php" method="post">
+        <legend>RESPONDER QUEJA</legend>
+        <textarea name="codigoqueja" cols="6" rows="1">
+            <?php
+            $id = $_POST["codigoqueja"];
+            echo "$id";
+            ?>
+        </textarea>
+        <textarea name="respuestas" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 
 </html>
