@@ -13,8 +13,6 @@
     <button type="button" id="responderqueja">Responder Queja</button>
     <button type="button" id="consultarqueja">Consultar Queja</button>
     <?php
-
-
     ?>
     <div id="invisible">
         <form action="codigo.php" method="post">

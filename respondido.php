@@ -19,8 +19,6 @@
             // Recuperar la variable 'nombre' del formulario enviado
             $respond = $_POST["respuestas"];
             $id = $_POST["codigoqueja"];
-    
-    echo" $sql = 'UPDATE solutia set Respuesta = $respond where Id = $id''";
              actualizar($id, $respond);
             echo "<p class='recuerda'>Recuerda tu código </p>";
             echo "<p id='codigo'>$sesion</p>";
