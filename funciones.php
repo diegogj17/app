@@ -29,8 +29,6 @@ function actualizar($Id,$Respuesta){
     $sql = "UPDATE solutia set `Respuesta` = '$Respuesta' where Id = $Id";
     
     $hola=mysqli_query($conn, $sql);
-    echo "<p>$hola , $sql</p>";
-    echo "<script>console.log($sql)</script>";
     mysqli_close($conn);
 }
 function insertarConID($id, $Asunto, $Mensaje)

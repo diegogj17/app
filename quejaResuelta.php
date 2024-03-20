@@ -14,12 +14,13 @@
     include("funciones.php");
     $respond = $_POST["respuestas"];
     $id = $_POST["codigoqueja"];
-        echo"<p>$respond</p>";
-        echo "<p>$id</p>";
        $id=trim($id);
     actualizar($id, $respond);
+    echo  "<p class='recuerda'>Queja Resuelta exitosamente</p>"
     ?>
-    
+    <form action="ini.php">
+    <input type="submit" id="volver" value="Volver"></input>
+    </form>
 </body>
 
 </html>

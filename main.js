@@ -79,7 +79,7 @@ function aparecerConsultarQueja() {
         botonconsultarqueja.style.display = "inline";
         botoncrearqueja.style.display = "inline";
         divconsultar.style.display = "none";
-        botonconsultarqueja.innerText = "Consultar Queja"
+        botonconsultarqueja.innerText = "Consultar Queja";
 
 
     }
@@ -90,3 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("submitBtn").disabled = true;
     });
 });
+
+
+
+
