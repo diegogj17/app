@@ -11,7 +11,7 @@
 <body>
     <?php
     session_start();
-
+   
     if (!isset ($_SESSION['answer'])) {
         include ("funciones.php");
 
@@ -22,10 +22,6 @@
             echo "<p class='recuerda'>$sesion</p>";
 
 
-        } else {
-            $sesion = $_SESSION['answer'];
-            echo "<p id='recuerda'>Recuerda tu código </p>";
-            echo "<p id='codigo'>$sesion</p>";
         }
     }
     ?>

@@ -20,8 +20,6 @@
     <div class="image2">
         <img src="solutia1.jpg" width="1550px" height="400px">
     </div>
-    <?php
-    ?>
     <div id="invisible">
         <form action="showIdCode.php" method="post">
             <legend>QUEJAS</legend>
@@ -36,8 +34,6 @@
 
 
     <div id="invisible2">
-        <?php
-        ?>
         <form action="respuesta.php" method="post">
             <legend>QUEJAS</legend>
             <label for="codigo_queja">Introduce el código de la queja:</label><br>
@@ -46,8 +42,6 @@
         </form>
     </div>
     <div id="invisible3">
-        <?php
-        ?>
         <form action="consultarqueja.php" method="post">
             <legend>CONSULTAR QUEJA</legend>
             <label for="codigo_queja">Introduce el código de la queja:</label><br>

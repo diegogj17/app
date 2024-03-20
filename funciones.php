@@ -96,4 +96,23 @@ function sacarTexto($id)
     mysqli_close($conn);
     return $definitivo;
 }
+function prepararTexto($id){
+    include ("includeBDD.php");
+    $existir = false;
+    $definitivo = "";
+    $variable = "SELECT `Asunto`, `Mensaje`, `Respuesta`  FROM solutia WHERE Id = $id";
+    $result = mysqli_query($conn, $variable);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $definitivo .= "Asunto: " . $row["Asunto"] . "<br>" . "Mensaje: " . $row["Mensaje"] . "<br>" . $row["Respuesta"];
+        }
+        $existir=true;
+    } else {
+        echo "No existe ese id";
+        $existir=false;
+    }
+    mysqli_close($conn);
+    return $existir;
+}
 ?>
+
