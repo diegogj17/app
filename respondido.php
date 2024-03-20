@@ -17,20 +17,22 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Recuperar la variable 'nombre' del formulario enviado
-            $id = $_POST["codigoqueja"];
-            $sesion = $_SESSION['answer'] = sacarTexto($id);
-            echo "<p class='recuerda'>$sesion</p>";
+            $respond = $_POST["asunto"];
+        
 
-
-        } else {
-            $sesion = $_SESSION['answer'];
-            echo "<p id='recuerda'>Recuerda tu código </p>";
+            $sesion =  $_SESSION['cod'] = insertar();
+            echo "<p class='recuerda'>Recuerda tu código </p>";
             echo "<p id='codigo'>$sesion</p>";
+        } else {
+            // Manejar el caso en que el formulario no fue enviado
+            echo "El formulario no fue enviado.";
         }
     }
     ?>
        <form action="respondido.php" method="post">
             <legend>RESPONDER QUEJA</legend>
+            <label for="codigo_queja">Código_Queja:</label><br>
+            <input type="text" id="codigoqueja" name="codigoqueja" required><br><br>
             <textarea name="respuestas" id="" cols="30" rows="10"></textarea>
             <input type="submit" value="Enviar">
         </form>
