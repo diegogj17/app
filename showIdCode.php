@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<form action="ini.php" class="volver">
     <?php
     session_start(); 
     
@@ -22,6 +23,7 @@
 
             $sesion =  $_SESSION['cod'] = insertar($asunto, $queja);
             echo "<p class='recuerda'>Recuerda tu código </p>";
+            echo"<br>";
             echo "<p id='codigo'>$sesion</p>";
         } else {
             // Manejar el caso en que el formulario no fue enviado
@@ -32,12 +34,13 @@
     }else {
        $sesion =  $_SESSION['cod'];
         echo "<p class='recuerda'>Recuerda tu código </p>";
+        echo"<br>";
         echo "<p id='codigo'>$sesion</p>";
     }
 
     
     ?>
-     <form action="ini.php">
+    <br>
     <input type="submit" id="volver" value="Volver"></input>
     </form>
 </body>
