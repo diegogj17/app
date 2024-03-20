@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-03-2024 a las 10:20:01
+-- Tiempo de generación: 20-03-2024 a las 12:21:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -32,15 +32,15 @@ CREATE TABLE `solutia` (
   `Fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Asunto` tinytext NOT NULL,
   `Mensaje` varchar(750) NOT NULL,
-  `Estado` tinyint(1) NOT NULL
+  `Respuesta` varchar(750) NOT NULL DEFAULT 'Todavía no hay respuesta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `solutia`
 --
 
-INSERT INTO `solutia` (`Id`, `Fecha`, `Asunto`, `Mensaje`, `Estado`) VALUES
-('000001', '2024-03-15 12:45:14', 'Probando primer dato', 'primer dato', 0);
+INSERT INTO `solutia` (`Id`, `Fecha`, `Asunto`, `Mensaje`, `Respuesta`) VALUES
+('996494', '2024-03-19 12:49:47', 'edu', 'edu perro', 'Todavía no hay respuesta');
 
 --
 -- Índices para tablas volcadas
